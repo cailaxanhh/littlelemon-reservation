@@ -1,16 +1,13 @@
 // import logo from './logo.svg';
+import './Components/Header';
 import './App.css';
 
 function App() {
   return (
     <>
        <Header />
-       <Main />
-       <HeroSection />
-       <Hightlight />
-       <Testimonials />
-       <AboutSection />
-       <Footer />
+       {/* <Body />
+       <Footer /> */}
     </>
   );
 }
