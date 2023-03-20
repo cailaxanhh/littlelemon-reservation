@@ -1,0 +1,129 @@
+@media screen and (max-width: 600px) {
+    .Header {
+        box-sizing: border-box;
+        padding: 0% auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu,
+    .basket,
+    #header-logo {
+        display: inline-block;
+    }
+
+    #header-logo{
+        width: 50%;
+        margin: 0% 10%;
+    }
+
+    .menu img {
+        width:80%;
+        float: left;
+        padding: 40% 0%;
+    }
+
+    .basket img {
+        width:80%;
+        float: right;
+        padding: 10% 0%;
+    }
+
+    #nav {
+        margin-top: 5%;
+        padding: 3% 10%;
+        background-color: rgb(73, 94, 87);
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+        display: none;
+    }
+
+    #nav img {
+        width: 10%;
+        position: absolute;
+        right: 0;
+        padding: 0% 3%;
+    }
+
+    #nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    #nav ul li {
+        list-style: none;
+        margin: 15%;
+        font-family: 'Karla', sans-serif;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    #nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    #nav ul li a :hover {
+        text-decoration: underline;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .Header {
+        box-sizing: border-box;
+        margin: 1% auto;
+        width: 80%;
+        display: flex;
+        background-color: white;
+        flex-wrap: wrap;
+    }
+
+    .menu,
+    .basket {
+        display: none;
+    }
+
+    #nav img {
+        display: none;
+    }
+
+    #header-logo {
+        float: left;
+        width: 20%;
+    }
+
+    #nav {
+        padding: 3% 0%;
+        box-sizing: border-box;
+        width: 80%;
+    }
+
+    #nav ul {
+        text-align: right;
+        padding: 0%;
+        width: 100%;
+    }
+
+    #nav ul li {
+        list-style-type: none;
+        display: inline;
+        margin: 2.5%;
+        box-sizing: border-box;
+    }
+
+    li:hover {
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-decoration-thickness: 0.2em;
+    }
+
+    #nav ul li a {
+        text-decoration: none;
+        font-size: 1.2vw;
+        font-family: 'Karla', sans-serif;
+        font-weight: 700;
+        color: black;
+     }
+}
