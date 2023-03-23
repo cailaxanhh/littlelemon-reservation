@@ -1,6 +1,7 @@
 import Header from './Components/Header/Header';
 import HeroSection from './Components/HeroSection/HeroSection';
 import Hightlight from './Components/Hightlight/Hightlight';
+import Testimonials from './Components/Testimonials/Testimonials';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
        <Header />
        <HeroSection />
        <Hightlight />
+       <Testimonials />
     </div>
   );
 }

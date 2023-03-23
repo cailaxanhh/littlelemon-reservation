@@ -1,0 +1,152 @@
+@media screen and (max-width: 600px) {
+    #Hightlight {
+        width: 100%;
+        padding: 0.5% 5% 1% 5%;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    #heading h1 {
+        margin: 3% 0% 7% 0%;
+    }
+
+    #heading button {
+        display: none;
+    }
+
+    #specials {
+        display: grid;
+        row-gap: 2%;
+    }
+
+    .dish {
+        height: 40vw;
+    }
+
+    .dishname {
+        display: inline-flex;
+        margin: 1% 0%;
+    }
+
+    .dishprice {
+        display: inline-flex;
+        float: right;
+        margin: 1% 0%;
+    }
+
+
+    .dish p {
+        height: 10vw;
+        overflow: hidden;
+        margin: 3% 0%;
+    }
+
+    .dish button {
+        border: none;
+        background-color: white;
+        padding: 0%;
+        font-weight: 600;
+        font-size: 4.5vw;
+    }
+
+    .dish button:hover {
+        text-decoration: underline;
+    }
+
+    .dish img {
+        object-fit: contain;
+        width: 30%;
+        float: right;
+        margin-left: 3%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #Hightlight {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 3% 10% 5% 10%;
+    }
+
+    #heading {
+        padding-bottom: 3%;
+    }
+
+    #heading h1 {
+        display: inline-flex;
+        font-size: 2.2vw;
+    }
+
+    #heading button {
+        display: inline-flex;
+        float: right;
+        padding: 1.5% 3%;
+        border-radius: 16px;
+        background-color: rgb(73, 94, 87);
+        border: none;
+        color: white;
+        font-weight: 700;
+        margin-top: 1%;
+        font-size: 1vw;
+    }
+
+    #heading button:hover {
+        background-color: rgb(224, 206, 20);
+        color: black;
+    }
+
+    #specials {
+        display: grid;
+        align-content: start;
+        grid-template-columns: 23.3% 23.3% 23.3% 23.3%;
+        gap: 2.5%;
+    }
+
+    .dish {
+        background-color: rgb(186, 186, 186);
+    }
+
+    .dishname {
+        font-family: 'Karla', sans-serif;
+        font-size: 1.2vw;
+        font-weight: 700;
+        display: inline-flex;
+        margin: 1vw;
+    }
+
+    .dishprice {
+        display: inline-flex;
+        float: right;
+        font-size: 1.2vw;
+        margin: 1vw;
+    }
+
+    .dishdetails {
+        overflow: hidden;
+        margin: 0vw 1vw;
+        height: 5vw;
+        text-align: justify;
+        font-weight: 400;
+        font-size: 0.85vw;
+    }
+
+    .dish button {
+        margin: 1.2vw 1vw;
+        padding: 0.5vw 1vw;
+        background-color: rgb(224, 206, 20);
+        border: none;
+        border-radius: 16px;
+        font-weight: 700;
+        font-size: 0.8vw;
+    }
+
+    .dish button:hover {
+        background-color: rgb(73, 94, 87);
+        color: white;
+    }
+
+    .dish img {
+        width: 100%;
+        height: 60%;
+    }
+}
