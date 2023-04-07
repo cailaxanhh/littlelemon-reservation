@@ -9,7 +9,7 @@ export default function Hightlight() {
   return (
     <div id="Hightlight">
       <div id="heading">
-        <h1>SPECIALS</h1>
+        <h2>SPECIALS</h2>
         <button id='order'>ORDER ONLINE</button>
       </div>
       <div id="specials">

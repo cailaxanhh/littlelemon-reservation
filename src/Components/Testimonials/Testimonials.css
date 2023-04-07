@@ -1,0 +1,85 @@
+@media screen and (max-width: 600px) {
+    #feedback {
+        padding: 5%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #fb-container {
+        display: grid;
+        row-gap: 5%;
+    }
+
+    .details {
+        width: 75%;
+        float: right;
+    }
+
+    .details h3 {
+        margin-top: 4%;
+        margin-bottom: 3.5%;
+    }
+
+    .comment {
+        height: 15vw;
+        overflow: hidden;
+        box-sizing: border-box;
+        margin-bottom: 8%;
+    }
+
+    .fbpic {
+        width: 20%;
+    }
+
+    .star {
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #feedback {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0% 10% 5% 10%;
+    }
+
+    #feedback h2 {
+        font-size: 2.2vw;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+
+    #fb-container {
+        display: grid;
+        align-content: start;
+        grid-template-columns: 30% 30% 30%;
+        gap: 5%;
+    }
+
+    .fb {
+        text-align: center;
+        background-color: rgb(73, 94, 87);
+        padding: 6% 5% 4% 5%;
+        box-sizing: border-box;
+        color: white;
+    }
+
+    .fb h3 {
+        margin: 2%;
+        font-size: 1.5vw;
+    }
+
+    .comment {
+        margin: 3% 5%;
+        font-weight: 400;
+        font-size: 1vw;
+    }
+
+    .fbpic {
+        width: 30%;
+    }
+
+    .star {
+        width: 7%;
+    }
+}
