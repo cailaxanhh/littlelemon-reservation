@@ -30,7 +30,7 @@ export default function Header() {
         <img src={basket} alt='basket'></img>
       </div>
       <nav id="nav">
-        <img id='close-icon' src={close} onClick={closemenu}></img>
+        <img alt='close-menu' id='close-icon' src={close} onClick={closemenu}></img>
         <ul>
           <li><a className='nav-item' href='/'>HOME</a></li>
           <li><a className='nav-item' href='/about'>ABOUT</a></li>

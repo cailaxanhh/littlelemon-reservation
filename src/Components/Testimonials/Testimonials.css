@@ -7,9 +7,9 @@
 
     #fb-container {
         display: grid;
-        row-gap: 5%;
+        row-gap: 2%;
     }
-
+    
     .details {
         width: 75%;
         float: right;
@@ -24,7 +24,6 @@
         height: 15vw;
         overflow: hidden;
         box-sizing: border-box;
-        margin-bottom: 8%;
     }
 
     .fbpic {
