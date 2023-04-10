@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import Reservation from './Router/Reservation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter> */}
-      <App />
-    {/* </BrowserRouter> */}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" index element={<App />} />
+        <Route path='/reservation' element={<Reservation />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

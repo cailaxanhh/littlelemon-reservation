@@ -1,12 +1,14 @@
 import React from 'react';
+import {Routes, Route, useNavigate, Link} from 'react-router-dom';
 import logo from '../../assets/Logo.svg';
 import './Header.css';
 import basket from '../../assets/Basket.svg';
 import hammenu from '../../assets/icon_hamburger_menu.svg';
 import close from '../../assets/close.png';
+import Reservation from '../../Router/Reservation';
 
 export default function Header() {
-  var x = document.getElementById("nav");
+  const x = document.getElementById("nav");
 
   function mobile() {
     if (x.style.display === "none") {
@@ -18,6 +20,12 @@ export default function Header() {
     if (x.style.display === "block") {
       x.style.display = "none";
     }
+  }
+
+  const navigate = useNavigate();
+
+  const navigateToReservation = () => {
+    navigate('/reservation');
   }
 
   return (
@@ -32,13 +40,16 @@ export default function Header() {
       <nav id="nav">
         <img alt='close-menu' id='close-icon' src={close} onClick={closemenu}></img>
         <ul>
-          <li><a className='nav-item' href='/'>HOME</a></li>
-          <li><a className='nav-item' href='/about'>ABOUT</a></li>
-          <li><a className='nav-item' href='/menu'>MENU</a></li>
-          <li><a className='nav-item' href='/reservation'>RESERVATION</a></li>
-          <li><a className='nav-item' href='/order-online'>ORDER ONLINE</a></li>
-          <li><a className='nav-item' href='/login'>LOGIN</a></li>
+          <li><Link className='nav-item' to='/'>HOME</Link></li>
+          <li><Link className='nav-item' to='/about'>ABOUT</Link></li>
+          <li><Link className='nav-item' to='/menu'>MENU</Link></li>
+          <li><Link className='nav-item' onClick={navigateToReservation} to='/reservation'>RESERVATION</Link></li>
+          <li><Link className='nav-item' to='/order-online'>ORDER ONLINE</Link></li>
+          <li><Link className='nav-item' to='/login'>LOGIN</Link></li>
         </ul>
+        <Routes>
+          <Route path='/reservation' element={<Reservation />} />
+        </Routes>
       </nav>
     </div>
   )
