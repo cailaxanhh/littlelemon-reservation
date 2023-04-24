@@ -23,7 +23,7 @@ export default function HeroSection() {
         <button onClick={navigateToReservation} id='reservation'>RESERVATION</button>
 
         <Routes>
-          <Route path="/reservation-" element={<Reservation />} />
+          <Route path="/reservation" element={<Reservation />} />
         </Routes>
       </div>
       <img src={res} alt="restaurantpic"></img>

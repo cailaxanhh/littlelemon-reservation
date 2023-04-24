@@ -7,6 +7,9 @@ import ResSubmitted from '../../Router/ResSubmitted';
 
 
 export default function ReservationForm() {
+
+    const navigate = useNavigate();
+
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
     const [guest, setGuest] = useState("");
@@ -16,35 +19,26 @@ export default function ReservationForm() {
     const [phnb, setPhnb] = useState("");
     const [email, setEmail] = useState("");
 
-    const navigate = useNavigate();
-
-    const navigateToSuccess = () => {
-        navigate('/reservation-submitted');
+    function ValidateEmail(mail) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(ReservationForm.email.value)) {
+            return (true)
+        }
+        alert("You have entered an invalid email address!")
+        return (false)
     }
 
-    const ValidateEmail = (email) => {
-        const errors = {}
-        if (!email) {
-          errors.email = 'Required'
-        } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
-          errors.email = 'Invalid email address'
-        }
-        return errors
-      }
 
     const formValid = () => {
         return (
             name.length >= 8 &&
-            ValidateEmail() &&
-            phnb.length === 10 &&
-            date.length > 0 && time.length > 0 && guest.length > 0
+            ValidateEmail(email)
         );
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        navigate('/reservation-submitted');
         clearForm();
-        console.log("Form submitted!");
     }
 
     const clearForm = () => {
@@ -74,16 +68,17 @@ export default function ReservationForm() {
                         onChange={(e) => {
                             setDate(e.target.value);
                         }}
-                        required></input> <br/>
+                        required></input> <br />
                     <label for='res-time'>Reservation Time *</label>
                     <select
+                        value={time}
                         id="res-time"
                         required
                         onChange={(e) => {
                             setTime(e.target.value);
                         }}>
                         <AvailableTimes />
-                    </select> <br/>
+                    </select> <br />
                     <label for="guests">Number of guests *</label>
                     <input
                         type="number"
@@ -94,7 +89,7 @@ export default function ReservationForm() {
                         value={guest}
                         onChange={(e) => {
                             setGuest(e.target.value);
-                        }}></input> <br/>
+                        }}></input> <br />
                     <label for="occasion">Occasion</label>
                     <select
                         id="occasion"
@@ -103,14 +98,14 @@ export default function ReservationForm() {
                         <option>Birthday</option>
                         <option>Anniversary</option>
                         <option>Engagement</option>
-                    </select> <br/>
+                    </select> <br />
                     <label for='special-req'>Special Requirement</label>
                     <textarea
                         name='special-req'
                         id='special-req'
                         rows='5' cols='50'
                         value={require}
-                        onChange={(e) => { setRequire(e.value.target) }} />
+                        onChange={(e) => { setRequire(e.target.value) }} />
                     <h2 className='form-subheading'>STEP 2</h2>
                     <label for='name'>Name *</label>
                     <input
@@ -120,7 +115,7 @@ export default function ReservationForm() {
                         value={name}
                         onChange={(e) => {
                             setName(e.target.value);
-                        }}></input> <br/>
+                        }}></input> <br />
                     <label for='phonenumber'>Phone Number *</label>
                     <input
                         type='number'
@@ -129,7 +124,7 @@ export default function ReservationForm() {
                         value={phnb}
                         onChange={(e) => {
                             setPhnb(e.target.value);
-                        }}></input> <br/>
+                        }}></input> <br />
                     <label for='email'>Email *</label>
                     <input
                         type='email'
@@ -138,7 +133,7 @@ export default function ReservationForm() {
                         value={email}
                         onChange={(e) => {
                             setEmail(e.target.value);
-                        }}></input> <br/>
+                        }}></input> <br />
                     <label id='guidelines-heading' for='guidelines-part'>GUIDELINES</label>
                     <ul>
                         <li>You will be received an email once the reservation is approved.</li>
@@ -146,8 +141,8 @@ export default function ReservationForm() {
                         <li>You need to follow safety protocols and a clean environment by washing hands, wearing face masks, and social distancing. </li>
                     </ul>
                     <input type='checkbox' required id='guidelines'></input>
-                    <label for='guidelines' id="labelforgui">I have read and agree to the guidelines above.</label> <br/>
-                    <input id="submitbutton" type="submit" onClick={navigateToSuccess} disabled={!formValid()} value="MAKE YOUR RESERVATION"></input>
+                    <label for='guidelines' id="labelforgui">I have read and agree to the guidelines above.</label> <br />
+                    <input id="submitbutton" type="submit" disabled={!formValid} value="MAKE YOUR RESERVATION"></input>
                 </form>
                 <Routes>
                     <Route path='/reservation-submitted' element={<ResSubmitted />} />
