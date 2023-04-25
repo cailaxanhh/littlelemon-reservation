@@ -6,6 +6,7 @@ import basket from '../../assets/Basket.svg';
 import hammenu from '../../assets/icon_hamburger_menu.svg';
 import close from '../../assets/close.png';
 import Reservation from '../../Router/Reservation';
+import ResSubmitted from '../../Router/ResSubmitted';
 
 export default function Header() {
   const x = document.getElementById("nav");
@@ -49,6 +50,7 @@ export default function Header() {
         </ul>
         <Routes>
           <Route path='/reservation' element={<Reservation />} />
+          <Route path='/reservation-submitted' element={<ResSubmitted />} />
         </Routes>
       </nav>
     </div>

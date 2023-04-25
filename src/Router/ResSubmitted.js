@@ -5,10 +5,10 @@ import Submitted from '../Components/Reservation/Submitted';
 
 export default function ResSubmitted() {
   return (
-    <div>
-        <Header />
-        <Submitted />
-        <Footer />
-    </div>
+    <>
+      <Header />
+      <Submitted />
+      <Footer />
+    </>
   )
 }
