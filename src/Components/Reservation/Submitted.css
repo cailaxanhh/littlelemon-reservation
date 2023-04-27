@@ -1,0 +1,85 @@
+@media screen and (max-width: 600px) {
+    .message-section {
+        text-align: center;
+        box-sizing: border-box;
+        margin: 1vw 6vw;
+        background: url("../../assets/restauranfood.jpg") no-repeat scroll center;
+        background-size: cover;
+        margin-bottom: 10vw;
+        color: white;
+        font-weight: 700;
+    }
+
+    .bookinginfo {
+        padding: 5vw 0vw;
+    }
+
+    .bookinginfo p {
+        margin: 2vw 0vw;
+        font-size: 1vw;
+    }
+
+    .tymessage {
+        margin: 25vw 0vw 35vw 0vw;
+    }
+
+    .tymessage h1 {
+        margin: 5vw 5vw 3vw 5vw;
+        font-family: 'Markazi Text', serif;
+        font-size: 11vw;
+    }
+
+    .tymessage p {
+        font-size: 1vw;
+        margin: 0vw 8vw;
+    }
+
+    .confirmation {
+        font-size: 1vw;
+        margin: 8vw;
+        padding-bottom: 3vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .message-section {
+        text-align: center;
+        box-sizing: border-box;
+        margin: 3vw 6vw;
+        background: url("../../assets/restaurant\ chef\ B.jpg") no-repeat scroll center;
+        background-size: cover;
+        margin-bottom: 1vw;
+        color: white;
+        font-weight: 700;
+    }
+
+    .bookinginfo {
+        padding: 3vw 0vw;
+    }
+
+    .bookinginfo p {
+        margin: 0.5vw 0vw;
+        font-size: 1vw;
+    }
+
+    .tymessage {
+        margin: 10vw 0vw 15vw 0vw;
+    }
+
+    .tymessage h1 {
+        margin: 5vw 5vw 0vw 5vw;
+        font-family: 'Markazi Text', serif;
+        font-size: 3vw;
+    }
+
+    .tymessage p {
+        font-size: 1vw;
+        margin: 0vw 8vw;
+    }
+
+    .confirmation {
+        font-size: 1vw;
+        margin: 5vw;
+        padding-bottom: 3vw;
+    }
+}

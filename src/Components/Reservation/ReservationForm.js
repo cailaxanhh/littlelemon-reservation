@@ -1,25 +1,18 @@
 import { useState } from 'react';
-import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import './ReservationForm.css';
 import AvailableTimes from './AvailableTimes';
-import ResSubmitted from '../../Router/ResSubmitted';
+
 
 
 export default function ReservationForm() {
 
     const navigate = useNavigate();
 
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [guest, setGuest] = useState("");
-    const [occasion, setOccasion] = useState("");
-    const [require, setRequire] = useState("");
-    const [name, setName] = useState("");
-    const [phnb, setPhnb] = useState("");
-    const [email, setEmail] = useState("");
+    const [inputs, setInputs] = useState({});
 
-    function ValidateEmail(mail) {
+    function ValidateEmail(email) {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(ReservationForm.email.value)) {
             return (true)
         }
@@ -27,29 +20,22 @@ export default function ReservationForm() {
         return (false)
     }
 
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setInputs(values => ({...values, [name]:value}))
+    }
 
     const formValid = () => {
         return (
-            name.length >= 8 &&
-            ValidateEmail(email)
+            inputs.Rname.length >= 8 &&
+            ValidateEmail(inputs.email)
         );
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate('/reservation-submitted');
-        clearForm();
-    }
-
-    const clearForm = () => {
-        setDate("");
-        setTime("");
-        setGuest("");
-        setOccasion("");
-        setRequire("");
-        setName("");
-        setPhnb("");
-        setEmail("");
     }
 
     return (
@@ -58,25 +44,23 @@ export default function ReservationForm() {
                 <h1>RESERVATION</h1>
             </div>
             <div className='form'>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} action='/formdata.json' method='POST' >
                     <h2 className='form-subheading'>STEP 1</h2>
                     <label for='res-date'>Reservation Date *</label>
                     <input
                         type='date'
                         id='res-date'
-                        value={date}
-                        onChange={(e) => {
-                            setDate(e.target.value);
-                        }}
+                        name='date'
+                        value={inputs.date || ""}
+                        onChange={handleChange}
                         required></input> <br />
                     <label for='res-time'>Reservation Time *</label>
                     <select
-                        value={time}
+                        value={inputs.time || ""}
                         id="res-time"
+                        name='time'
                         required
-                        onChange={(e) => {
-                            setTime(e.target.value);
-                        }}>
+                        onChange={handleChange}>
                         <AvailableTimes />
                     </select> <br />
                     <label for="guests">Number of guests *</label>
@@ -86,67 +70,62 @@ export default function ReservationForm() {
                         min="1" max="50"
                         id="guests"
                         required
-                        value={guest}
-                        onChange={(e) => {
-                            setGuest(e.target.value);
-                        }}></input> <br />
+                        name='guest'
+                        value={inputs.guest || ""}
+                        onChange={handleChange}></input> <br />
                     <label for="occasion">Occasion</label>
                     <select
                         id="occasion"
-                        value={occasion}
-                        onChange={(e) => { setOccasion(e.target.value) }}>
+                        name='occasion'
+                        value={inputs.occasion || ""}
+                        onChange={handleChange}>
+                        <option>-</option>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                         <option>Engagement</option>
                     </select> <br />
                     <label for='special-req'>Special Requirement</label>
                     <textarea
-                        name='special-req'
+                        name='require'
                         id='special-req'
                         rows='5' cols='50'
-                        value={require}
-                        onChange={(e) => { setRequire(e.target.value) }} />
+                        value={inputs.require || ""}
+                        onChange={handleChange} />
                     <h2 className='form-subheading'>STEP 2</h2>
                     <label for='name'>Name *</label>
                     <input
                         type='text'
                         id='name'
                         required
-                        value={name}
-                        onChange={(e) => {
-                            setName(e.target.value);
-                        }}></input> <br />
+                        name='Rname'
+                        value={inputs.Rname || ""}
+                        onChange={handleChange}></input> <br />
                     <label for='phonenumber'>Phone Number *</label>
                     <input
                         type='number'
                         id='phonenumber'
                         required
-                        value={phnb}
-                        onChange={(e) => {
-                            setPhnb(e.target.value);
-                        }}></input> <br />
+                        name='phnb'
+                        value={inputs.phnb || ""}
+                        onChange={handleChange}></input> <br />
                     <label for='email'>Email *</label>
                     <input
                         type='email'
                         id='email'
                         required
-                        value={email}
-                        onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}></input> <br />
+                        name='email'
+                        value={inputs.email || ""}
+                        onChange={handleChange}></input> <br />
                     <label id='guidelines-heading' for='guidelines-part'>GUIDELINES</label>
                     <ul>
                         <li>You will be received an email once the reservation is approved.</li>
                         <li>You need to follow the COVID-19 guidelines implemented by the local government. </li>
                         <li>You need to follow safety protocols and a clean environment by washing hands, wearing face masks, and social distancing. </li>
                     </ul>
-                    <input type='checkbox' required id='guidelines'></input>
+                    <input type='checkbox' onChange={handleChange} required id='guidelines'></input>
                     <label for='guidelines' id="labelforgui">I have read and agree to the guidelines above.</label> <br />
                     <input id="submitbutton" type="submit" disabled={!formValid} value="MAKE YOUR RESERVATION"></input>
                 </form>
-                <Routes>
-                    <Route path='/reservation-submitted' element={<ResSubmitted />} />
-                </Routes>
             </div>
         </div>
     )

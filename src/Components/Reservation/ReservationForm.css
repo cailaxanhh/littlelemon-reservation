@@ -26,6 +26,7 @@
         font-family: 'Karla', sans-serif;
         border: none;
         border-radius: 5px;
+        font-size: 3.5vw;
     }
 
     form ul li {
@@ -77,6 +78,7 @@
         border-radius: 8px;
         border: none;
         font-family: 'Karla', sans-serif;
+        font-size: 3.5vw;
     }
 }
 
@@ -109,6 +111,7 @@
         border: none;
         border-radius: 5px;
         width: 50%;
+        font-size: 1.2vw;
     }
 
     form ul li {
@@ -125,9 +128,10 @@
         padding-right: 10%;
         font-size: 1.2vw;
     }
-    
+
     input[type=checkbox] {
         width: 5%;
+        font-size: 3.5vw;
     }
 
     #submitbutton {
@@ -160,5 +164,6 @@
         border-radius: 8px;
         border: none;
         font-family: 'Karla', sans-serif;
+        font-size: 1.2vw;
     }
 }

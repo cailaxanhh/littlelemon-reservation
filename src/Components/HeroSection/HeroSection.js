@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import res from '../../assets/restaurant.jpg';
 import './HeroSection.css';
 

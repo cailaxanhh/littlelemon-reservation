@@ -48,10 +48,6 @@ export default function Header() {
           <li><Link className='nav-item' to='/order-online'>ORDER ONLINE</Link></li>
           <li><Link className='nav-item' to='/login'>LOGIN</Link></li>
         </ul>
-        <Routes>
-          <Route path='/reservation' element={<Reservation />} />
-          <Route path='/reservation-submitted' element={<ResSubmitted />} />
-        </Routes>
       </nav>
     </div>
   )
